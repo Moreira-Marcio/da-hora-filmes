@@ -14,4 +14,6 @@ Use o comando: `npx expo install react-native-safe-area-context `
 _Utilizamos o `expo imstall ` para garantir a instalação de dependencias (ou libs) que sejam compativeis com a versao de SKD do Expo usada e,m seu projeto._
 
 - Refatoramos a estrutura e estilização do `App.tsx` usando os componentes:
-  `SafeAreaProvider`,`SafeAreaView`, `StatusBar` (do expo)
+  `SafeAreaProvider`,`SafeAreaView`, `StatusBar` (do expo),`view`, `text`, `button`
+
+- uso do flex para determinar o tamanho das views
