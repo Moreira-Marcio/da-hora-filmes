@@ -1,23 +1,35 @@
+import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import { Button, Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
+  /* usamos o useFonts para criar uma referencia para a fonte que queremos utilizar no app */
+  const [fonteCarregada] = useFonts({
+    Monoton: require("./assets/fonts/Monoton-Regular.ttf"),
+  });
+  //se a fonte ainda nao foi carregada
+  if (!fonteCarregada) {
+    return (
+      <Text style={{ color: "red", fontSize: 22 }}>Carregando fonte...</Text>
+    );
+  }
+
   return (
     <SafeAreaProvider>
       <SafeAreaView style={estilos.container}>
         <StatusBar style="auto"></StatusBar>
         <View style={estilos.viewLogo}>
           <Image source={require("./assets/dahora.png")} style={estilos.logo} />
-          <Text>Dá hora filmes</Text>
+          <Text style={estilos.tituloApp}>Dá hora filmes</Text>
         </View>
         <View style={estilos.viewBotoes}>
-          <Button title="Buscar filmes" />,
-          <Button title="Favoritos" />,
+          <Button title="Buscar filmes" />
+          <Button title="Favoritos" />
         </View>
         <View style={estilos.viewRodape}>
-          <Button title="Privacidade" />,
-          <Button title="Sobre" />,
+          <Button title="Privacidade" />
+          <Button title="Sobre" />
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
@@ -37,6 +49,11 @@ const estilos = StyleSheet.create({
     flex: 3,
     justifyContent: "center",
     alignItems: "center",
+  },
+  tituloApp: {
+    fontSize: 32,
+    color: "#5451a6",
+    fontFamily: "Monoton",
   },
   logo: {
     width: 128,
