@@ -1,7 +1,8 @@
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
-import { Button, Image, StyleSheet, Text, View } from "react-native";
+import { Button, Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { AntDesign, Ionicons } from "@expo/vector-icons";
 
 export default function App() {
   /* usamos o useFonts para criar uma referencia para a fonte que queremos utilizar no app */
@@ -24,7 +25,10 @@ export default function App() {
           <Text style={estilos.tituloApp}>Dá hora filmes</Text>
         </View>
         <View style={estilos.viewBotoes}>
-          <Button title="Buscar filmes" />
+          <Pressable style={estilos.botaoinicial}>
+            <AntDesign name="search1" size={24} color="white" />
+            <Text style={estilos.textoBotao}>Buscar filmes</Text>
+          </Pressable>
           <Button title="Favoritos" />
         </View>
         <View style={estilos.viewRodape}>
@@ -49,6 +53,16 @@ const estilos = StyleSheet.create({
     flex: 3,
     justifyContent: "center",
     alignItems: "center",
+  },
+  botaoinicial: {
+    backgroundColor: "#5451a6",
+    padding: 16,
+    borderRadius: 8,
+    alignItems: "center",
+    flexDirection: "row",
+  },
+  textoBotao: {
+    color: "white",
   },
   tituloApp: {
     fontSize: 32,
