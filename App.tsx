@@ -1,19 +1,29 @@
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
-import { Button, Image, Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  Button,
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { AntDesign, Ionicons } from "@expo/vector-icons";
+
+// Importando a biblioteca interna vector-icons
+import { Ionicons } from "@expo/vector-icons";
+import Loading from "./src/componentes/Loading";
 
 export default function App() {
-  /* usamos o useFonts para criar uma referencia para a fonte que queremos utilizar no app */
+  /* Usamos o useFonts para criar uma referência para a fonte que queremos uilizar no app. */
   const [fonteCarregada] = useFonts({
     Monoton: require("./assets/fonts/Monoton-Regular.ttf"),
   });
-  //se a fonte ainda nao foi carregada
+
+  // Se a fonte ainda não foi carregada
   if (!fonteCarregada) {
-    return (
-      <Text style={{ color: "red", fontSize: 22 }}>Carregando fonte...</Text>
-    );
+    return <Loading />;
   }
 
   return (
@@ -22,26 +32,35 @@ export default function App() {
         <StatusBar style="auto"></StatusBar>
         <View style={estilos.viewLogo}>
           <Image source={require("./assets/dahora.png")} style={estilos.logo} />
-          <Text style={estilos.tituloApp}>Dá hora filmes</Text>
+          <Text style={estilos.tituloApp}>Dá Hora Filmes</Text>
         </View>
         <View style={estilos.viewBotoes}>
-          <Pressable style={estilos.botaoinicial}>
-            <AntDesign name="search1" size={24} color="white" />
-            <Text style={estilos.textoBotao}>Buscar filmes</Text>
+          <Pressable style={estilos.botaoInicial}>
+            <Ionicons name="search" size={24} color="white" />
+            <Text style={estilos.textoBotao}>Buscar Filmes</Text>
           </Pressable>
-          <Button title="Favoritos" />
+          <Pressable style={estilos.botaoInicial}>
+            <Ionicons name="star" size={24} color="gold" />
+            <Text style={estilos.textoBotao}>Favoritos</Text>
+          </Pressable>
         </View>
         <View style={estilos.viewRodape}>
-          <Button title="Privacidade" />
-          <Button title="Sobre" />
+          <Pressable style={estilos.botaoRodape}>
+            <Ionicons name="lock-closed" size={18} color="white" />
+            <Text style={estilos.textoBotao}> Privacidade</Text>
+          </Pressable>
+
+          <Pressable style={estilos.botaoRodape}>
+            <Ionicons name="information-circle" size={18} color="white" />
+            <Text style={estilos.textoBotao}> Sobre</Text>
+          </Pressable>
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
   );
 }
 
-/* estilos */
-
+/* Estilos */
 const estilos = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
@@ -54,36 +73,41 @@ const estilos = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  botaoinicial: {
-    backgroundColor: "#5451a6",
-    padding: 16,
-    borderRadius: 8,
-    alignItems: "center",
-    flexDirection: "row",
-  },
-  textoBotao: {
-    color: "white",
+  logo: {
+    width: 128,
+    height: 128,
   },
   tituloApp: {
     fontSize: 32,
     color: "#5451a6",
     fontFamily: "Monoton",
   },
-  logo: {
-    width: 128,
-    height: 128,
-  },
   viewBotoes: {
-    backgroundColor: "#ffcc80",
     flex: 2,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
   },
+  botaoInicial: {
+    backgroundColor: "#5451a6",
+    padding: 16,
+    borderRadius: 8,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  textoBotao: {
+    color: "white",
+  },
   viewRodape: {
-    backgroundColor: "#ef9a9a",
+    backgroundColor: "#5451a6",
     flex: 0.5,
+    flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
+    borderRadius: 8,
+  },
+  botaoRodape: {
+    padding: 16,
     flexDirection: "row",
     alignItems: "center",
   },
