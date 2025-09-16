@@ -17,3 +17,12 @@ _Utilizamos o `expo imstall ` para garantir a instalação de dependencias (ou l
   `SafeAreaProvider`,`SafeAreaView`, `StatusBar` (do expo),`view`, `text`, `button`
 
 - uso do flex para determinar o tamanho das views
+
+## 02_mais-estilos-logo-font-icones-pressable
+
+- Aplicação da imagem do logo usando o componente
+- Adição e configuração de fonte personalizada usando o expo-font e useFonts
+- Estilização do App.tsx usando recursos do StyleSheet
+- Substituição do Button por Pressable para criação de botões customizados
+- Uso de ícones através do @expo-vector-icons
+- Aplicação do ActivityIndicator para criação de um componente Loading
