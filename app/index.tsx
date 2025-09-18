@@ -40,7 +40,7 @@ export default function index() {
             </Pressable>
           </Link>
 
-          <Link href="buscar" asChild>
+          <Link href="/sobre" asChild>
             <Pressable style={estilos.botaoRodape}>
               <Ionicons name="information-circle" size={18} color="white" />
               <Text style={estilos.textoBotao}> Sobre</Text>
