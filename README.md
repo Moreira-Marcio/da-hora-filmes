@@ -40,3 +40,14 @@ _Utilizamos o `expo imstall ` para garantir a instalação de dependencias (ou l
 - Migração do conteúdo/estrutura do App.tsx para o \_layout.tsx e para as páginas correspondentes (index, privacidade e sobre)
 - Configuração das rotas usando componente Link do expo-router
 - Uso do componente ScrollView para telas com barra de rolagem
+
+---
+
+## 04_telas-basicas-de-busca-e-resultados
+
+- criação da versão basica das telas `busca` e `resultados`
+- uso do componente `TextImput` para entrada de dados na tela
+- uso de State para gerenciar o filme digitado no campo de entrada
+- validação basica usando `alert` e `vibration`
+- navegação via programação com `useRouter` + passagem de parametros
+- acesso aos parametros de rota com `useLocalSearchParams`
