@@ -1,3 +1,5 @@
+//modulo responsavel pelo acesso a dados  de variaveis de ambiente
+import "dotenv/config";
 import { ExpoConfig, ConfigContext } from "@expo/config";
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
@@ -27,4 +29,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     edgeToEdgeEnabled: true,
   },
   plugins: ["expo-font", "expo-asset", "expo-router"],
+  // acesso a API_KEY atraves do dotenv e guardando na chave apiKey
+  extra: {
+    apiKey: process.env.API_KEY,
+  },
 });
