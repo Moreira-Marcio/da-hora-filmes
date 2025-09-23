@@ -20,10 +20,12 @@ export default function index() {
           <Text style={estilos.tituloApp}>Dá Hora Filmes</Text>
         </View>
         <View style={estilos.viewBotoes}>
-          <Pressable style={estilos.botaoInicial}>
-            <Ionicons name="search" size={24} color="white" />
-            <Text style={estilos.textoBotao}>Buscar Filmes</Text>
-          </Pressable>
+          <Link href="/busca" asChild>
+            <Pressable style={estilos.botaoInicial}>
+              <Ionicons name="search" size={24} color="white" />
+              <Text style={estilos.textoBotao}>Buscar Filmes</Text>
+            </Pressable>
+          </Link>
 
           <Link href="/favoritos" asChild>
             <Pressable style={estilos.botaoInicial}>
