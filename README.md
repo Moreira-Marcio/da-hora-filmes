@@ -75,3 +75,15 @@ _Utilizamos o `expo imstall ` para garantir a instalação de dependencias (ou l
 - Ajuste do layout do FlatLista para modo de 2 colunas (grid)
 - Adição de imagem do filme e imagem alternativa em CardFilme
 - Adição de créditos ao TMDB na tela Sobre
+
+---
+
+## 07_detalhes-do-filme
+
+- Criação de rotas dinamicas: `app/detalhes/[id].tsx`
+- Adiciona dados do filme como string para o parametro da rota de detalhes
+- Em detalhes, captura o filme como string e converte paraobjeto
+- Exibe filme nos componentes
+- Formata data e ajusta logica para exibir "não disponivel" quando tiver data e sinopse
+
+---
