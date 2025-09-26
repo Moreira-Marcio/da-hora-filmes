@@ -1,8 +1,9 @@
 import { useFonts } from "expo-font";
-import Loading from "@/src/components/Loading";
+
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Stack } from "expo-router";
 import { StatusBar } from "react-native";
+import Loading from "@/src/componentes/Loading";
 
 export default function Layout() {
   const [fonteCarregada] = useFonts({
