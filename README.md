@@ -51,3 +51,27 @@ _Utilizamos o `expo imstall ` para garantir a instalação de dependencias (ou l
 - validação basica usando `alert` e `vibration`
 - navegação via programação com `useRouter` + passagem de parametros
 - acesso aos parametros de rota com `useLocalSearchParams`
+
+---
+
+## 05_uso-da-api-com-config-env
+
+- Cadastro no TheMovieDB para obter a API Key
+- Conversão do app.json para app.config.ts
+- Adição da propriedade extra.apiKey no app.config.ts e import do dotenv
+- Instalação do Axios (lib muito usada para comunicação com APIs)
+- Configuração do service/api.ts com parâmetros para acessar a API via Axios
+- Utilização do useEffect com o Axios para fazer consulta de filmes na API
+
+---
+
+## 06_finalizacao-do-resultados-e-componentes-adicionais
+
+- Definindo alias/apelido para os caminhos (tsconfig.json)
+- Adição de states para resultados da busca por filmes e controle do loading
+- Uso do componente nativo <FlatList> para listas de dados dinâmicos
+- Ajuste do FlatList para renderização de componente <CardFilme> com dados de cada filme
+- Ajuste do FlatList para renderização de componente <ItemVazio> caso não tenha resultados na busca de filme
+- Ajuste do layout do FlatLista para modo de 2 colunas (grid)
+- Adição de imagem do filme e imagem alternativa em CardFilme
+- Adição de créditos ao TMDB na tela Sobre
