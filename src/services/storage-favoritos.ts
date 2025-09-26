@@ -9,7 +9,7 @@ const STORAGE_FAVORITOS = "filmes_favoritos";
  * le a lista e favoritos do async storage
  * retona um array vazio em caso de erro ou chave inesistente
  */
-async function carregar(): Promise<Filme[]> {
+export async function carregar(): Promise<Filme[]> {
   try {
     //le a string salva na storage (pode vir null)
     const favoritosArmazenamentos = await AsyncStorage.getItem(
@@ -25,7 +25,7 @@ async function carregar(): Promise<Filme[]> {
   }
 }
 
-async function salvarLista(lista: Filme[]): Promise<void> {
+export async function salvarLista(lista: Filme[]): Promise<void> {
   try {
     await AsyncStorage.setItem(STORAGE_FAVORITOS, JSON.stringify(lista));
 
@@ -40,7 +40,7 @@ async function salvarLista(lista: Filme[]): Promise<void> {
  * retorna true se salvou com sucesso, false se o filme ja estava nos favoritos
  */
 
-async function slvarFilmeFavorito(filme: Filme): Promise<boolean> {
+export async function salvarFilmeFavorito(filme: Filme): Promise<boolean> {
   const favoritos = await carregar();
   //verifica dse o filme ja existe na lista com o mesmo id na sta/storagede favoritos.a função some() retorna true se encontrar pelo menios 1item
   if (favoritos.some((filmeExistente) => filmeExistente.id === filme.id)) {
