@@ -61,3 +61,18 @@ export async function salvarFilmeFavorito(filme: Filme): Promise<boolean> {
 export function buscarFavoritos(): Promise<Filme[]> {
   return carregar();
 }
+
+/** excluir um filme especifico pelo seu id */
+
+export async function removerFilmeFavorito(id: number): Promise<void> {
+  const favoritos = await carregar();
+
+  /* filtrando a lista de favoritos ja existente, avaliando qual filme de ser "descartado/removido".Com isso geramos uma nova lista atualizada sem o filme que deve ser removido */
+  const listaAtualizada = favoritos.filter(
+    (filmeExistente) => filmeExistente.id !== id
+  );
+
+  //pegamos a nova lista atualizada, e enviamos para o salvarLista gravar no storage
+  // na pratica sobrescrevemos a lista anterior
+  await salvarLista(listaAtualizada);
+}

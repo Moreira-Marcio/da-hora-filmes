@@ -29,3 +29,7 @@ export type FilmeDetalhes = {
   vote_average: number;
   backdrop_path: string | null;
 };
+
+export type ItemDalistaDeFavoritos = {
+  item: Filme;
+};
