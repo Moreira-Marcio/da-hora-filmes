@@ -9,12 +9,12 @@ import {
   FlatListComponent,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Stack } from "expo-router";
+import { router, Stack } from "expo-router";
 
 // @ts-ignore
 import { Ionicons } from "@expo/vector-icons";
 import { useEffect, useState } from "react";
-import { Filme } from "@/src/types";
+import { Filme, ItemDalistaDeFavoritos } from "@/src/types";
 import { buscarFavoritos } from "@/src/services/storage-favoritos";
 import Loading from "@/src/componentes/Loading";
 
@@ -32,9 +32,19 @@ export default function Favoritos() {
   }, []);
   console.log(favoritos);
 
-  const itemDaListaDeFavoritos = () => (
-    <Pressable style={estilos.item}>
-      <Text style={estilos.titulo}>Titulo...</Text>
+  const itemDaListaDeFavoritos = ({ item }: ItemDalistaDeFavoritos) => (
+    <Pressable
+      style={estilos.item}
+      onPress={() => {
+        router.push({
+          pathname: "/detalhes/[id]",
+          params: {
+            filme: JSON.stringify(item),
+          },
+        });
+      }}
+    >
+      <Text style={estilos.titulo}>{item.title}</Text>
       <Pressable style={estilos.botaoLixeira}>
         <Ionicons name="trash" size={24} color="#888" />
       </Pressable>
