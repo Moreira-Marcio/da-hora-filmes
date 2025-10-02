@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, Image, Pressable } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+
 import { StatusBar } from "expo-status-bar";
 import { Ionicons } from "@expo/vector-icons";
 import { ScreenStack, StackScreen } from "react-native-screens";
@@ -8,9 +8,10 @@ import { Link, Stack } from "expo-router";
 export default function index() {
   return (
     <>
+      <StatusBar style="dark" />
       <Stack.Screen options={{ headerShown: false, headerBackTitle: "Home" }} />
 
-      <SafeAreaView style={estilos.container}>
+      <View style={estilos.container}>
         <StatusBar style="auto"></StatusBar>
         <View style={estilos.viewLogo}>
           <Image
@@ -49,7 +50,7 @@ export default function index() {
             </Pressable>
           </Link>
         </View>
-      </SafeAreaView>
+      </View>
     </>
   );
 }

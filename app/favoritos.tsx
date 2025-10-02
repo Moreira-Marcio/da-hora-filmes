@@ -8,7 +8,7 @@ import {
   FlatList,
   FlatListComponent,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+
 import { router, Stack } from "expo-router";
 
 // @ts-ignore
@@ -114,7 +114,7 @@ export default function Favoritos() {
             ),
         }}
       />
-      <SafeAreaView style={estilos.container}>
+      <View style={estilos.container}>
         {loading ? (
           <Loading />
         ) : (
@@ -128,7 +128,7 @@ export default function Favoritos() {
             />
           </View>
         )}
-      </SafeAreaView>
+      </View>
     </>
   );
 }

@@ -1,6 +1,6 @@
 // app/resultados.tsx
-import { FlatList, StyleSheet, Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { FlatList, StyleSheet, Text, View } from "react-native";
+
 import { Stack, useLocalSearchParams } from "expo-router";
 import { Filme, ParametrosBusca } from "@/src/types";
 import { useEffect, useState } from "react";
@@ -8,6 +8,7 @@ import { api } from "@/src/services/api";
 import Loading from "@/src/componentes/Loading";
 import CardFilme from "@/src/componentes/CardFilmes";
 import ItemVazio from "@/src/componentes/ItemVazio";
+
 // import Loading from "@/src/components/Loading";
 // import CardFilme from "@/src/components/CardFilme";
 // import ItemVazio from "@/src/components/ItemVazio";
@@ -51,7 +52,7 @@ export default function Resultados() {
         }}
       />
 
-      <SafeAreaView style={estilos.container}>
+      <View style={estilos.container}>
         <Text style={estilos.texto}>
           Você buscou por: <Text style={estilos.termo}>{filme}</Text>
         </Text>
@@ -69,7 +70,7 @@ export default function Resultados() {
             ListEmptyComponent={ItemVazio}
           />
         )}
-      </SafeAreaView>
+      </View>
     </>
   );
 }
