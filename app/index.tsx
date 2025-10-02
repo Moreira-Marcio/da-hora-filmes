@@ -100,6 +100,7 @@ const estilos = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     borderRadius: 8,
+    marginBottom: 20,
   },
   botaoRodape: {
     padding: 16,
