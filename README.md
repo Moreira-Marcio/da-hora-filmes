@@ -87,3 +87,13 @@ _Utilizamos o `expo imstall ` para garantir a instalação de dependencias (ou l
 - Formata data e ajusta logica para exibir "não disponivel" quando tiver data e sinopse
 
 ---
+
+## 08_gerenciamento-de-favoritos
+
+- instalação da lib `AsyncStorage`
+- Criação da tela de favoritos (basica)
+- Criação do service `storage-favoritos` com as funções de manipulação do storage (armazenamento fizico do aparelho)
+- Carregamento de dados com o auxilio do useEffect
+- Exibição do FlatList
+- Uso de funções intermediarias em favoritos.txs para acionar as funções so storage para salvar,apagar e apagar tudo
+- Uso de Aletrt com botoes Sim e Não para apagar todos os favoritos
