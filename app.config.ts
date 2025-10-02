@@ -6,6 +6,9 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: "DáHora Filmes",
   slug: "dahora-filmes",
+
+  owner: "bazao",
+
   scheme: "dahora",
   version: "1.0.0",
   orientation: "portrait",
