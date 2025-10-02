@@ -10,7 +10,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   owner: "bazao",
 
   scheme: "dahora",
-  version: "1.0.0",
+  version: "1.1.0",
   orientation: "portrait",
   icon: "./assets/icone.png",
   userInterfaceStyle: "automatic",
