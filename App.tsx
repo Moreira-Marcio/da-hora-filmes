@@ -1,20 +1,55 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { Button, StyleSheet, Text, View } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>bora começar</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={estilos.container}>
+        <StatusBar style="auto"></StatusBar>
+        <View style={estilos.viewLogo}>
+          <Text>Dá hora filmes</Text>
+        </View>
+        <View style={estilos.viewBotoes}>
+          <Button title="Buscar filmes" />,
+          <Button title="Favoritos" />,
+        </View>
+        <View style={estilos.viewRodape}>
+          <Button title="Privacidade" />,
+          <Button title="Sobre" />,
+        </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
-const styles = StyleSheet.create({
+/* estilos */
+
+const estilos = StyleSheet.create({
   container: {
+    backgroundColor: "#fff9c4",
+    paddingHorizontal: 20,
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
+  },
+  viewLogo: {
+    backgroundColor: "lightgreen",
+    flex: 3,
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  viewBotoes: {
+    backgroundColor: "#ffcc80",
+    flex: 2,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+  },
+  viewRodape: {
+    backgroundColor: "#ef9a9a",
+    flex: 0.5,
+    justifyContent: "space-between",
+    flexDirection: "row",
+    alignItems: "center",
   },
 });
